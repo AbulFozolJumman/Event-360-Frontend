@@ -5,9 +5,7 @@ const Services = () => {
   return (
     <>
       <section className="max-w-[1280px] mx-auto px-5">
-        <h2 className="text-[64px] font-extrabold text-center uppercase">
-          Our Services
-        </h2>
+        <h2 className="text-[64px] font-extrabold text-center">Our Services</h2>
         <p className="text-[18px] mx-auto text-center mb-[54px] max-w-2xl">
           Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
           ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
