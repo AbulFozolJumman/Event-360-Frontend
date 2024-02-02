@@ -1,0 +1,17 @@
+.card:hover {
+  background-color: #5a01cb;
+  transition: 0.5s ease-in-out;
+}
+.card:hover .btn {
+  color: #5a01cb;
+  background-color: white;
+  transition: 0.5s ease-in-out;
+}
+.card:hover .check {
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+.card:hover .text {
+  color: white;
+  transition: 0.5s ease-in-out;
+}
