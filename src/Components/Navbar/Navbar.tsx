@@ -1,7 +1,7 @@
 const Navbar = () => {
   return (
     <>
-      <nav className="flex items-center justify-between max-w-[1280px] h-24 mb-16 mx-auto">
+      <nav className="flex items-center justify-between max-w-[1280px] h-24 mb-16 mx-auto px-5">
         <h2 className="text-[32px] font-extrabold">
           Event
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FE8900] to-[#5A01CB] pl-1">

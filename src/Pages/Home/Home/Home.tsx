@@ -1,7 +1,9 @@
+import Banner from "../Banner/Banner";
+
 const Home = () => {
   return (
     <>
-      <h1>Event 360</h1>
+      <Banner />
     </>
   );
 };
