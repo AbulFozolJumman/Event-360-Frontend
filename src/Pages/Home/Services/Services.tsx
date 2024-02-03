@@ -11,7 +11,7 @@ const Services = () => {
           ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
         </p>
         <div className="flex gap-5">
-          <div className="max-w-[412px] rounded-md w-full p-[25px] bg-[#F6F2FD]">
+          <div className="max-w-[412px] rounded-md w-full p-[25px] bg-[#F6F2FD] hover:bg-[#E6D9F7]">
             <img src={serviceImg1} alt="" />
             <h2 className="font-extrabold text-[32px] mt-6 mb-3">
               Corporate event
@@ -33,7 +33,7 @@ const Services = () => {
               <p className="text-[18px]">Front Seat</p>
             </div>
           </div>
-          <div className="max-w-[412px] rounded-md w-full p-[25px] bg-[#F6F2FD]">
+          <div className="max-w-[412px] rounded-md w-full p-[25px] bg-[#F6F2FD] hover:bg-[#E6D9F7]">
             <img src={serviceImg2} alt="" />
             <h2 className="font-extrabold text-[32px] mt-6 mb-3">
               Organization event
@@ -55,7 +55,7 @@ const Services = () => {
               <p className="text-[18px]">Front Seat</p>
             </div>
           </div>
-          <div className="max-w-[412px] rounded-md w-full p-[25px] bg-[#E6D9F7]">
+          <div className="max-w-[412px] rounded-md w-full p-[25px] bg-[#F6F2FD] hover:bg-[#E6D9F7]">
             <h2 className="font-extrabold text-[32px] mb-3">Wedding event</h2>
             <p>
               Ut posuere felis arcu tellus tempus in in ultricies. Gravida id
@@ -79,7 +79,7 @@ const Services = () => {
               <img src={checked} alt="checked" />
               <p className="text-[18px]">Front Seat</p>
             </div>
-            <button className="w-full bg-[#5A01CB] rounded-md py-4 text-white font-bold">
+            <button className="w-full bg-[#5A01CB] hover:bg-white rounded-md py-4 text-white hover:text-[#5A01CB] font-bold">
               Check it out
             </button>
           </div>
