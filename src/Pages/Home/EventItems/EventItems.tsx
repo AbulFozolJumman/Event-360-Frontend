@@ -1,12 +1,28 @@
-import eventItem1 from "../../../assets/Event-item-1.png";
-import eventItem2 from "../../../assets/Event-item-2.png";
-import eventItem3 from "../../../assets/Event-item-3.png";
-import eventItem4 from "../../../assets/Event-item-4.png";
-import eventItem5 from "../../../assets/Event-item-5.png";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import collageImg from "../../../assets/Collage.png";
 import checkedGray from "../../../assets/check-gray.png";
+import { useContext } from "react";
+import { Event360Context } from "../../../Provider/Event360Provider";
+import "./EventItems.css";
 
 const EventItems = () => {
+  const { eventItemsData } = useContext(Event360Context);
+  const { data, isLoading, isError } = eventItemsData;
+
+  const item1 = data?.data[0];
+  const item2 = data?.data[1];
+  const item3 = data?.data[2];
+  const item4 = data?.data[3];
+  const item5 = data?.data[4];
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (isError) {
+    return <p>Something went wrong</p>;
+  }
   return (
     <>
       <section className="bg-no-repeat bg-right bg-auto bg-[url('https://i.ibb.co/6bF5CW4/Blue.png')]">
@@ -21,27 +37,36 @@ const EventItems = () => {
           </p>
           <div className="flex justify-center gap-5">
             <div className="p-6 bg-[#C4E0E4] rounded-md">
-              <img src={eventItem1} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Wireless Speaker</h3>
+              <img src={item1.imgURL} alt="" />
+              <h3 className="text-[24px] font-medium mt-3">{item1.name}</h3>
             </div>
             <div className="p-6 bg-[#FEE2F3] rounded-md">
-              <img src={eventItem2} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Sound Majorz</h3>
+              <img src={item2.imgURL} alt="" />
+              <h3 className="text-[24px] font-medium mt-3">{item2.name}</h3>
             </div>
           </div>
           <div className="flex justify-center gap-5 mt-5">
             <div className="p-6 bg-[#FEEFE2] rounded-md">
-              <img src={eventItem3} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Microphone</h3>
+              <img src={item3.imgURL} alt="" />
+              <h3 className="text-[24px] font-medium mt-3">{item3.name}</h3>
             </div>
             <div className="p-6 bg-[#E2F8FC] rounded-md">
-              <img src={eventItem4} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Bus Compressor</h3>
+              <img src={item4.imgURL} alt="" />
+              <h3 className="text-[24px] font-medium mt-3">{item4.name}</h3>
             </div>
             <div className="p-6 bg-[#E4CCC6] rounded-md">
-              <img src={eventItem5} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Electric Guitar</h3>
+              <img src={item5.imgURL} alt="" />
+              <h3 className="text-[24px] font-medium mt-3">{item5.name}</h3>
             </div>
+          </div>
+          <div className="flex justify-center gap-5 mt-5">
+            {data &&
+              data?.data?.slice(5).map((i) => (
+                <div className="p-6 bg-[#E4CCC6] rounded-md">
+                  <img src={i.imgURL} alt="" />
+                  <h3 className="text-[24px] font-medium mt-3">{i.name}</h3>
+                </div>
+              ))}
           </div>
         </div>
 
