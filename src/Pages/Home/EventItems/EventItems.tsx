@@ -22,25 +22,25 @@ const EventItems = () => {
           <div className="flex justify-center gap-5">
             <div className="p-6 bg-[#C4E0E4] rounded-md">
               <img src={eventItem1} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Event Item - 1</h3>
+              <h3 className="text-[24px] font-medium mt-3">Wireless Speaker</h3>
             </div>
             <div className="p-6 bg-[#FEE2F3] rounded-md">
               <img src={eventItem2} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Event Item - 2</h3>
+              <h3 className="text-[24px] font-medium mt-3">Sound Majorz</h3>
             </div>
           </div>
           <div className="flex justify-center gap-5 mt-5">
             <div className="p-6 bg-[#FEEFE2] rounded-md">
               <img src={eventItem3} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Event Item - 3</h3>
+              <h3 className="text-[24px] font-medium mt-3">Microphone</h3>
             </div>
             <div className="p-6 bg-[#E2F8FC] rounded-md">
               <img src={eventItem4} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Event Item - 4</h3>
+              <h3 className="text-[24px] font-medium mt-3">Bus Compressor</h3>
             </div>
             <div className="p-6 bg-[#E4CCC6] rounded-md">
               <img src={eventItem5} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">Event Item - 5</h3>
+              <h3 className="text-[24px] font-medium mt-3">Electric Guitar</h3>
             </div>
           </div>
         </div>

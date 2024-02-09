@@ -12,6 +12,10 @@ import DashboardLayout from "./Layout/DashboardLayout/DashboardLayout";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Events from "./Pages/Dashboard/Events/Events";
 import EventServices from "./Pages/Dashboard/EventServices/EventServices";
+import Event360Provider from "./Provider/Event360Provider";
+import EventItems from "./Pages/Dashboard/EventItems/EventItems";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const router = createBrowserRouter([
   {
@@ -44,12 +48,23 @@ const router = createBrowserRouter([
         path: "event-services",
         element: <EventServices />,
       },
+      {
+        path: "event-items",
+        element: <EventItems />,
+      },
     ],
   },
 ]);
 
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <QueryClientProvider client={queryClient}>
+      <Event360Provider>
+        <RouterProvider router={router} />
+        <ReactQueryDevtools initialIsOpen={false} />
+      </Event360Provider>
+    </QueryClientProvider>
   </React.StrictMode>
 );

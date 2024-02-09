@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.18.1",
+    "@tanstack/react-query-devtools": "^5.18.1",
+    "axios": "^1.6.7",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.3",
     "react": "^18.2.0",

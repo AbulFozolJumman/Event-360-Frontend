@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-[#111617] pt-12 pb-9">
-        <footer className="max-w-[1536px] xl:px-24 lg:px-12 md:px-8 px-5 mx-auto">
+        <div className="max-w-[1280px] px-5 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-6 items-start gap-8 md:gap-12">
             <div>
               <h2 className="text-[32px] font-extrabold text-white leading-none">
@@ -143,7 +143,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </footer>
+        </div>
       </footer>
     </>
   );

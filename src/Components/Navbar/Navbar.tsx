@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <>
@@ -23,6 +25,11 @@ const Navbar = () => {
             <a className="font-medium" href="#">
               Contact
             </a>
+          </li>
+          <li>
+            <NavLink className="font-medium" to="/dashboard">
+              Dashboard
+            </NavLink>
           </li>
         </ul>
       </nav>
