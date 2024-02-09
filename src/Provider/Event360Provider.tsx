@@ -1,10 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
-import { createContext } from "react";
+import { ReactNode, createContext } from "react";
 
-export const Event360Context = createContext();
+export const Event360Context = createContext({});
 
-const Event360Provider = ({ children }) => {
+interface Event360ProviderProps {
+  children: ReactNode; // Specify the type for the children prop
+}
+
+const Event360Provider: React.FC<Event360ProviderProps> = ({ children }) => {
   // Retrieving events data by axios
   const events = async () => {
     return await axios.get("https://music-event-360-backend.vercel.app/events");

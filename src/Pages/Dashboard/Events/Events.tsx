@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { useContext } from "react";
 import { Event360Context } from "../../../Provider/Event360Provider";
 
