@@ -4,7 +4,7 @@ import collageImg from "../../../assets/Collage.png";
 import checkedGray from "../../../assets/check-gray.png";
 import { useContext } from "react";
 import { Event360Context } from "../../../Provider/Event360Provider";
-import "./EventItems.css";
+import Loader from "../../../Components/Loader/Loader";
 
 const EventItems = () => {
   const { eventItemsData } = useContext(Event360Context);
@@ -17,7 +17,7 @@ const EventItems = () => {
   const item5 = data?.data[4];
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loader />;
   }
 
   if (isError) {

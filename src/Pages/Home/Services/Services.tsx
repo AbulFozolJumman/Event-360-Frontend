@@ -79,7 +79,7 @@ const Services = () => {
               <img src={checked} alt="checked" />
               <p className="text-[18px]">Front Seat</p>
             </div>
-            <button className="w-full bg-[#5A01CB] hover:bg-white rounded-md py-4 text-white hover:text-[#5A01CB] font-bold">
+            <button className="w-full bg-[#5A01CB] border border-[#5a01cb] hover:bg-white rounded-md py-4 text-white hover:text-[#5A01CB] font-bold">
               Check it out
             </button>
           </div>
