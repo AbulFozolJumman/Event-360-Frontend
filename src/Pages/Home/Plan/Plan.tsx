@@ -38,7 +38,7 @@ const Plan = () => {
               <FaCheck className="text-[#5a01cb] check" />
               <p className="text-[18px] text">All Widget Types</p>
             </div>
-            <button className="w-full btn bg-[#5A01CB] border border-[#5a01cb] mt-[130px] rounded-md py-4 text-white hover:bg-white hover:text-[#5A01CB] font-bold">
+            <button className="w-full plan-btn bg-[#5A01CB] border border-[#5a01cb] mt-[130px] rounded-md py-4 text-white hover:bg-white hover:text-[#5A01CB] font-bold">
               Get this package
             </button>
           </div>
@@ -70,7 +70,7 @@ const Plan = () => {
               <FaCheck className="text-[#5a01cb] check" />
               <p className="text-[18px] text">Integrations</p>
             </div>
-            <button className="w-full btn bg-[#5A01CB] border border-[#5a01cb] mt-[90px] rounded-md py-4 text-white hover:bg-white hover:text-[#5A01CB] font-bold">
+            <button className="w-full plan-btn bg-[#5A01CB] border border-[#5a01cb] mt-[90px] rounded-md py-4 text-white hover:bg-white hover:text-[#5A01CB] font-bold">
               Get this package
             </button>
           </div>
@@ -106,7 +106,7 @@ const Plan = () => {
               <FaCheck className="text-[#5a01cb] check" />
               <p className="text-[18px] text">Dedicated Manager</p>
             </div>
-            <button className="w-full btn bg-[#5A01CB] border border-[#5a01cb] mt-12 rounded-md py-4 text-white hover:bg-white hover:text-[#5A01CB] font-bold">
+            <button className="w-full plan-btn bg-[#5A01CB] border border-[#5a01cb] mt-12 rounded-md py-4 text-white hover:bg-white hover:text-[#5A01CB] font-bold">
               Get this package
             </button>
           </div>

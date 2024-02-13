@@ -139,7 +139,9 @@ const Events = () => {
             data?.data?.map((e) => (
               <tbody key={e._id}>
                 <tr className="border-b">
-                  <td className="py-2 px-4">{e.name}</td>
+                  <td className="py-2 px-4 text-[14px] md:text-[16px]">
+                    {e.name}
+                  </td>
                   <td className="py-2 px-4">
                     <img
                       src={e.imgURL}

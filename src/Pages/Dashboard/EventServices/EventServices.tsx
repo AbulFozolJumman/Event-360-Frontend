@@ -146,17 +146,15 @@ const EventServices = () => {
             data?.data?.map((e) => (
               <tbody key={e._id}>
                 <tr className="border-b">
-                  <td className="py-2 px-1">{e.name}</td>
-                  {/* <td className="py-2 px-1">
-                    <img
-                      src={e.services}
-                      alt="User Avatar"
-                      className="w-20 h-20 rounded-md"
-                    />
-                  </td> */}
+                  <td className="py-2 px-1 text-[14px] md:text-[16px]">
+                    {e.name}
+                  </td>
                   <td className="py-2 px-1">
                     {e.services.split(",").map((n, index) => (
-                      <p key={index} className="m-1 p-1 bg-gray-200">
+                      <p
+                        key={index}
+                        className="m-1 p-1 bg-gray-200 text-[14px] md:text-[16px]"
+                      >
                         {n}
                       </p>
                     ))}

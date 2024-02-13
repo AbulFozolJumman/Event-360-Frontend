@@ -9,7 +9,7 @@ import {
 import Main from "./Layout/Main/Main";
 import Home from "./Pages/Home/Home/Home";
 import DashboardLayout from "./Layout/DashboardLayout/DashboardLayout";
-import Dashboard from "./Pages/Dashboard/Dashboard";
+import Dashboard from "./Pages/Dashboard/Home/Dashboard";
 import Events from "./Pages/Dashboard/Events/Events";
 import EventServices from "./Pages/Dashboard/EventServices/EventServices";
 import Event360Provider from "./Provider/Event360Provider";

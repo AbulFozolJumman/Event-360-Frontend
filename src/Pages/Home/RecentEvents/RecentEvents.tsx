@@ -45,10 +45,10 @@ const RecentEvents = () => {
   return (
     <>
       <section className="py-20 max-w-7xl mx-auto">
-        <h2 className="text-[64px] font-extrabold text-center">
+        <h2 className="text-[32px] md:text-[64px] font-extrabold text-center">
           Recent Events
         </h2>
-        <p className="text-[18px] mx-auto text-center mb-[80px] max-w-2xl">
+        <p className="text-[14px] md:text-[18px] mx-auto text-center mb-[80px] max-w-2xl">
           Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
           ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
         </p>

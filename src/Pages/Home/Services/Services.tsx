@@ -5,9 +5,6 @@ import "./Services.css";
 import { useContext } from "react";
 import { Event360Context } from "../../../Provider/Event360Provider";
 import Loader from "../../../Components/Loader/Loader";
-// ==========================================
-// TO DO => Responsive, animation
-// ==========================================
 
 const Services = () => {
   // Importing data from context API
@@ -28,9 +25,11 @@ const Services = () => {
 
   return (
     <>
-      <section className="max-w-[1280px] mx-auto px-5">
-        <h2 className="text-[64px] font-extrabold text-center">Our Services</h2>
-        <p className="text-[18px] mx-auto text-center mb-[54px] max-w-2xl">
+      <section id="services" className="max-w-[1280px] mx-auto px-5">
+        <h2 className="text-[32px] md:text-[64px] font-extrabold text-center">
+          Our Services
+        </h2>
+        <p className="text-[14px] md:text-[18px] mx-auto text-center mb-[54px] max-w-2xl">
           Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
           ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
         </p>
@@ -45,7 +44,7 @@ const Services = () => {
                 <h2 className="font-extrabold text-[32px] mt-6 mb-3">
                   {s.name}
                 </h2>
-                <p className="hidden description mb-8">
+                <p className="text-[14px] md:text-[18px] hidden description mb-8">
                   Ut posuere felis arcu tellus tempus in in ultricies. Gravida
                   id nibh ornare viverra. Ultrices faucibus neque velit risus ac
                   id lorem.Ut posuere felis arcu tellus tempus in in
@@ -58,7 +57,7 @@ const Services = () => {
                     <p className="text-[18px]">{d}</p>
                   </div>
                 ))}
-                <button className="btn hidden w-full bg-[#5A01CB] border border-[#5a01cb] hover:bg-white rounded-md py-4 text-white hover:text-[#5A01CB] font-bold my-10">
+                <button className="service-btn hidden w-full bg-[#5A01CB] border border-[#5a01cb] hover:bg-white rounded-md py-4 text-white hover:text-[#5A01CB] font-bold mt-10">
                   Check it out
                 </button>
               </div>

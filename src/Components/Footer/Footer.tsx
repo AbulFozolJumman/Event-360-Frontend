@@ -4,7 +4,7 @@ import { RxAccessibility } from "react-icons/rx";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-[#111617] pt-12 pb-9">
+      <footer id="about" className="bg-[#111617] pt-12 pb-9">
         <div className="max-w-[1280px] px-5 mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-6 items-start gap-8 md:gap-12">
             <div>

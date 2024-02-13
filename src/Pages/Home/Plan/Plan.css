@@ -2,7 +2,7 @@
   background-color: #5a01cb;
   transition: 0.5s ease-in-out;
 }
-.card:hover .btn {
+.card:hover .plan-btn {
   color: #5a01cb;
   background-color: white;
   transition: 0.5s ease-in-out;

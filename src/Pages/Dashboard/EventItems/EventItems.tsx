@@ -145,7 +145,9 @@ const EventItems = () => {
             data?.data?.map((i) => (
               <tbody key={i._id}>
                 <tr className="border-b">
-                  <td className="py-2 px-4">{i.name}</td>
+                  <td className="py-2 px-4 text-[14px] md:text-[16px]">
+                    {i.name}
+                  </td>
                   <td className="py-2 px-4">
                     <img
                       src={i.imgURL}

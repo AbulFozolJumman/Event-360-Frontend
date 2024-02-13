@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Events from "./Events/Events";
-import EventServices from "./EventServices/EventServices";
-import EventItems from "./EventItems/EventItems";
+import Events from "../Events/Events";
+import EventServices from "../EventServices/EventServices";
+import EventItems from "../EventItems/EventItems";
 import { SlEvent } from "react-icons/sl";
 import { GrBusinessService } from "react-icons/gr";
 import { TbToolsKitchen } from "react-icons/tb";

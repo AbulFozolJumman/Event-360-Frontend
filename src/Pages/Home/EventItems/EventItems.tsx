@@ -28,10 +28,10 @@ const EventItems = () => {
       <section className="bg-no-repeat bg-right bg-auto bg-[url('https://i.ibb.co/6bF5CW4/Blue.png')]">
         {/* Event items */}
         <div className="mx-auto px-5 py-[140px] bg-no-repeat bg-left-top bg-auto bg-[url('https://i.ibb.co/Z1DGZFL/Purple.png')]">
-          <h2 className="text-[64px] font-extrabold text-center">
+          <h2 className="text-[32px] md:text-[64px] font-extrabold text-center">
             Event Items
           </h2>
-          <p className="text-[18px] mx-auto text-center mb-[54px] max-w-2xl">
+          <p className="text-[14px] md:text-[18px] mx-auto text-center mb-[54px] max-w-2xl">
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
             ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
           </p>
@@ -74,8 +74,10 @@ const EventItems = () => {
         <div className="max-w-[1280px] mx-auto px-5 pb-[160px] bg-no-repeat bg-right-bottom bg-auto bg-[url('https://i.ibb.co/qMPXLNw/Explosion.png')]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-5">
             <div className=" bg-no-repeat bg-right-top bg-auto bg-[url('https://i.ibb.co/02Wf8Bb/Party.png')]">
-              <h2 className="text-[64px] font-extrabold my-8">Gallery</h2>
-              <p className="text-[18px] mx-auto mb-[35px] max-w-2xl">
+              <h2 className="text-[32px] md:text-[64px] font-extrabold my-8">
+                Gallery
+              </h2>
+              <p className="text-[14px] md:text-[18px] mx-auto mb-[35px] max-w-2xl">
                 Ut posuere felis arcu tellus tempus in in ultricies. Gravida id
                 nibh ornare viverra. Ultrices faucibus neque velit risus ac id
                 lorem.Ut posuere felis arcu tellus tempus in in ultricies.
