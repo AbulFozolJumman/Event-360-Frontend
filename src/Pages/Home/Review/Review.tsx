@@ -7,7 +7,7 @@ const Review = () => {
   return (
     <>
       <section className="bg-gradient-to-r from-[#6a0de0] to-[#1e0044] py-20">
-        <h2 className="text-[64px] font-extrabold text-white mb-20 max-w-[1280px] mx-auto">
+        <h2 className="text-[64px] font-extrabold text-white mb-20 max-w-[1280px] mx-auto px-5">
           What everyone says
         </h2>
         {/* Marquee */}

@@ -13,7 +13,7 @@ const Plan = () => {
             14 days unlimited free trial. No contract or credit card required.
           </p>
         </div>
-        <div className="flex justify-center gap-[35px] top-[-200px] relative">
+        <div className="flex flex-col md:flex-row justify-center gap-[35px] top-[-200px] relative px-5">
           <div className="max-w-[370px] shadow-md card pt-[44px] pb-6 px-[51px] rounded-xl bg-white">
             <h3 className="text-[23px] font-semibold mb-[6px] text">
               Starter Plan

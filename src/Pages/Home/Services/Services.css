@@ -1,0 +1,12 @@
+.service-card:hover .service-img {
+  display: none;
+}
+.btn {
+  display: none;
+}
+.service-card:hover .description {
+  display: block;
+}
+.service-card:hover .btn {
+  display: inline-block;
+}

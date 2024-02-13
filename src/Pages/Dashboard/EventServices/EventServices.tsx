@@ -127,6 +127,7 @@ const EventServices = () => {
       </p>
     );
   }
+
   return (
     <>
       {/* Event service table */}

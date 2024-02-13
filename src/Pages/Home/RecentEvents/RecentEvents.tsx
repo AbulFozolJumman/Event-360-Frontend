@@ -1,24 +1,47 @@
-import rc1 from "../../../assets/rc-1.png";
-import rc2 from "../../../assets/rc-2.png";
-import rc3 from "../../../assets/rc-3.png";
-import rc4 from "../../../assets/rc-4.png";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+import { useContext } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { Event360Context } from "../../../Provider/Event360Provider";
+import Loader from "../../../Components/Loader/Loader";
 
 const responsive = {
   0: {
     items: 1,
   },
+  400: {
+    items: 1,
+  },
   568: {
     items: 2,
   },
-  1024: {
+  769: {
+    items: 3,
+  },
+  1025: {
     items: 4,
     itemsFit: "contain",
   },
 };
 
 const RecentEvents = () => {
+  // Importing data from context API
+  const { eventsData } = useContext(Event360Context);
+  const { data, isLoading, isError } = eventsData;
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (isError) {
+    return (
+      <p className="flex items-center justify-center font-extrabold text-red-500">
+        Something went wrong
+      </p>
+    );
+  }
+
   return (
     <>
       <section className="py-20 max-w-7xl mx-auto">
@@ -37,90 +60,22 @@ const RecentEvents = () => {
           infinite
           disableButtonsControls
         >
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc1} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Flower Decorations</p>
-              <p className="text-[#475569] text-sm">by Melvina Spring</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc2} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Flower Decorations</p>
-              <p className="text-[#475569] text-sm">by Melvina Spring</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc3} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Splash</p>
-              <p className="text-[#475569] text-sm">by Rwanda Melflor</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc4} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Colorful Face</p>
-              <p className="text-[#475569] text-sm">by Melvina Spring</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc1} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Flower Decorations</p>
-              <p className="text-[#475569] text-sm">by Melvina Spring</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc2} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Flower Decorations</p>
-              <p className="text-[#475569] text-sm">by Melvina Spring</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc3} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Splash</p>
-              <p className="text-[#475569] text-sm">by Rwanda Melflor</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc4} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Colorful Face</p>
-              <p className="text-[#475569] text-sm">by Melvina Spring</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc1} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Flower Decorations</p>
-              <p className="text-[#475569] text-sm">by Melvina Spring</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc2} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Flower Decorations</p>
-              <p className="text-[#475569] text-sm">by Melvina Spring</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc3} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Splash</p>
-              <p className="text-[#475569] text-sm">by Rwanda Melflor</p>
-            </div>
-          </div>
-          <div className="max-w-[266px]">
-            <img className="rounded-t-md" src={rc4} alt="" />
-            <div className="p-4 bg-[#F2F2F2] rounded-b-md">
-              <p>Colorful Face</p>
-              <p className="text-[#475569] text-sm">by Melvina Spring</p>
-            </div>
-          </div>
+          {data &&
+            data?.data.map((r) => (
+              <div key={r._id} className="max-w-[266px] mx-5">
+                <img
+                  className="rounded-t-md w-full h-[220px]"
+                  src={r.imgURL}
+                  alt={r.name}
+                />
+                <div className="p-4 bg-[#F2F2F2] rounded-b-md">
+                  <p>{r.name}</p>
+                  <p className="text-[#475569] text-sm mt-2">
+                    by Melvin Spring
+                  </p>
+                </div>
+              </div>
+            ))}
         </AliceCarousel>
       </section>
     </>

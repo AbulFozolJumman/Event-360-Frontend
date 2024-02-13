@@ -116,11 +116,11 @@ const Footer = () => {
             </div>
           </div>
           <hr className="border mb-4 border-[#334155]" />
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col md:flex-row gap-5 items-center justify-between">
             <p className="text-center text-[16px] text-[#E2E8F0]">
               @ 2023. All rights reserved.
             </p>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-wrap items-center gap-6">
               <a className="text-[#E2E8F0]" href="#">
                 Terms
               </a>

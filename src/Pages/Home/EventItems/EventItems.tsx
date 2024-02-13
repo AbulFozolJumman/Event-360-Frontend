@@ -35,7 +35,7 @@ const EventItems = () => {
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
             ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
           </p>
-          <div className="flex justify-center gap-5">
+          <div className="flex flex-col md:flex-row justify-center gap-5">
             <div className="p-6 bg-[#C4E0E4] rounded-md">
               <img src={item1.imgURL} alt="" />
               <h3 className="text-[24px] font-medium mt-3">{item1.name}</h3>
@@ -45,7 +45,7 @@ const EventItems = () => {
               <h3 className="text-[24px] font-medium mt-3">{item2.name}</h3>
             </div>
           </div>
-          <div className="flex justify-center gap-5 mt-5">
+          <div className="flex flex-col md:flex-row justify-center gap-5 mt-5">
             <div className="p-6 bg-[#FEEFE2] rounded-md">
               <img src={item3.imgURL} alt="" />
               <h3 className="text-[24px] font-medium mt-3">{item3.name}</h3>
@@ -59,7 +59,7 @@ const EventItems = () => {
               <h3 className="text-[24px] font-medium mt-3">{item5.name}</h3>
             </div>
           </div>
-          <div className="flex justify-center gap-5 mt-5">
+          <div className="flex flex-col md:flex-row justify-center gap-5 mt-5">
             {data &&
               data?.data?.slice(5).map((i) => (
                 <div className="p-6 bg-[#E4CCC6] rounded-md">
@@ -72,7 +72,7 @@ const EventItems = () => {
 
         {/* Gallery */}
         <div className="max-w-[1280px] mx-auto px-5 pb-[160px] bg-no-repeat bg-right-bottom bg-auto bg-[url('https://i.ibb.co/qMPXLNw/Explosion.png')]">
-          <div className="flex justify-between items-center gap-5">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-5">
             <div className=" bg-no-repeat bg-right-top bg-auto bg-[url('https://i.ibb.co/02Wf8Bb/Party.png')]">
               <h2 className="text-[64px] font-extrabold my-8">Gallery</h2>
               <p className="text-[18px] mx-auto mb-[35px] max-w-2xl">

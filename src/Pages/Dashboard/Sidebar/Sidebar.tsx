@@ -4,10 +4,11 @@ import { SlEvent } from "react-icons/sl";
 import { GrBusinessService } from "react-icons/gr";
 import { IoHomeOutline } from "react-icons/io5";
 import { TbToolsKitchen } from "react-icons/tb";
+import "./Sidebar.css";
 
 const Sidebar = () => {
   return (
-    <aside className="col-span-2 bg-[#E6D9F7] h-screen sticky top-0 left-0 overflow-auto p-5">
+    <aside className="col-span-2 bg-[#E6D9F7] h-screen sticky top-0 left-0 overflow-auto p-2 md:p-5">
       <nav className="flex flex-col">
         <NavLink
           className={({ isActive }) =>
@@ -18,7 +19,7 @@ const Sidebar = () => {
           to="/"
         >
           <IoHomeOutline className="shrink-0 text-[22px]" />
-          <span className="truncate">Back to Home</span>
+          <span className="truncate mobile">Back to Home</span>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -29,7 +30,7 @@ const Sidebar = () => {
           to="/dashboard/my-dashboard"
         >
           <RxDashboard className="shrink-0 text-xl" />
-          <span className="truncate">Dashboard</span>
+          <span className="truncate mobile">Dashboard</span>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -40,7 +41,7 @@ const Sidebar = () => {
           to="/dashboard/events"
         >
           <SlEvent className="shrink-0" />
-          <span className="truncate">Events</span>
+          <span className="truncate mobile">Events</span>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -51,7 +52,7 @@ const Sidebar = () => {
           to="/dashboard/event-services"
         >
           <GrBusinessService className="shrink-0" />
-          <span className="truncate">Event Services</span>
+          <span className="truncate mobile">Event Services</span>
         </NavLink>
         <NavLink
           className={({ isActive }) =>
@@ -62,7 +63,7 @@ const Sidebar = () => {
           to="/dashboard/event-items"
         >
           <TbToolsKitchen className="shrink-0" />
-          <span className="truncate">Event Items</span>
+          <span className="truncate mobile">Event Items</span>
         </NavLink>
       </nav>
     </aside>
