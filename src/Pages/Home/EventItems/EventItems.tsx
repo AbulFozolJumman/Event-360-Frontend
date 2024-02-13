@@ -35,30 +35,31 @@ const EventItems = () => {
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
             ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
           </p>
-          <div className="flex flex-col md:flex-row justify-center gap-5">
-            <div className="p-6 bg-[#C4E0E4] rounded-md">
-              <img src={item1.imgURL} alt="" />
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
+            <div className="p-6 md:col-span-6 bg-[#C4E0E4] rounded-md">
+              <img className="w-full" src={item1.imgURL} alt="" />
               <h3 className="text-[24px] font-medium mt-3">{item1.name}</h3>
             </div>
-            <div className="p-6 bg-[#FEE2F3] rounded-md">
-              <img src={item2.imgURL} alt="" />
+            <div className="p-6 md:col-span-6 bg-[#FEE2F3] rounded-md">
+              <img className="w-full" src={item2.imgURL} alt="" />
               <h3 className="text-[24px] font-medium mt-3">{item2.name}</h3>
             </div>
-          </div>
-          <div className="flex flex-col md:flex-row justify-center gap-5 mt-5">
-            <div className="p-6 bg-[#FEEFE2] rounded-md">
-              <img src={item3.imgURL} alt="" />
+            <div className="md:col-span-4 p-6 bg-[#FEEFE2] rounded-md">
+              <img className="w-full" src={item3.imgURL} alt="" />
               <h3 className="text-[24px] font-medium mt-3">{item3.name}</h3>
             </div>
-            <div className="p-6 bg-[#E2F8FC] rounded-md">
-              <img src={item4.imgURL} alt="" />
+            <div className="md:col-span-4 p-6 bg-[#E2F8FC] rounded-md">
+              <img className="w-full" src={item4.imgURL} alt="" />
               <h3 className="text-[24px] font-medium mt-3">{item4.name}</h3>
             </div>
-            <div className="p-6 bg-[#E4CCC6] rounded-md">
-              <img src={item5.imgURL} alt="" />
+            <div className="md:col-span-4 p-6 bg-[#E4CCC6] rounded-md">
+              <img className="w-full" src={item5.imgURL} alt="" />
               <h3 className="text-[24px] font-medium mt-3">{item5.name}</h3>
             </div>
           </div>
+          {/* <div className="flex flex-col md:flex-row justify-center gap-5 mt-5">
+            
+          </div> */}
           <div className="flex flex-col md:flex-row justify-center gap-5 mt-5">
             {data &&
               data?.data?.slice(5).map((i) => (
