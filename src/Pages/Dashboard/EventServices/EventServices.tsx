@@ -46,14 +46,14 @@ const EventServices = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
+    // Handling form submission
     const addEventService = {
       name,
       services,
     };
     await postMutateAsync(addEventService);
     alert("Event service added successfully");
-    // Close the modal
+    // Closing the modal
     handleCloseModal();
   };
 
@@ -73,7 +73,7 @@ const EventServices = () => {
   // Event service UPDATE operation
   const handleSubmit2 = async (e) => {
     e.preventDefault();
-    // Handle form submission
+    // Handling form submission
     const updateEventService = {
       name,
       services,
@@ -95,7 +95,7 @@ const EventServices = () => {
           location.reload(true);
         }
       });
-    // Close the modal
+    // Closing the modal
     handleCloseModal2();
   };
 
@@ -136,7 +136,6 @@ const EventServices = () => {
           <thead>
             <tr className="bg-gray-100">
               <th className="py-2 px-1 text-left">Name</th>
-              {/* <th className="py-2 px-1 text-left">Image</th> */}
               <th className="py-2 px-1 text-left">Services</th>
               <th className="py-2 px-1 text-center">Action</th>
             </tr>
@@ -177,7 +176,6 @@ const EventServices = () => {
                     </div>
                   </td>
                 </tr>
-                {/* Add more rows here */}
               </tbody>
             ))}
         </table>

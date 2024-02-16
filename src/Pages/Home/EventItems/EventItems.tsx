@@ -5,6 +5,11 @@ import checkedGray from "../../../assets/check-gray.png";
 import { useContext } from "react";
 import { Event360Context } from "../../../Provider/Event360Provider";
 import Loader from "../../../Components/Loader/Loader";
+import Item1 from "../../../Components/Items/Item1";
+import Item2 from "../../../Components/Items/Item2";
+import Item3 from "../../../Components/Items/Item3";
+import Item4 from "../../../Components/Items/Item4";
+import Item5 from "../../../Components/Items/Item5";
 
 const EventItems = () => {
   const { eventItemsData } = useContext(Event360Context);
@@ -25,7 +30,7 @@ const EventItems = () => {
   }
   return (
     <>
-      <section className="bg-no-repeat bg-right bg-auto bg-[url('https://i.ibb.co/6bF5CW4/Blue.png')]">
+      <section className="bg-no-repeat max-w-7xl mx-auto px-5 bg-right bg-auto bg-[url('https://i.ibb.co/6bF5CW4/Blue.png')]">
         {/* Event items */}
         <div className="mx-auto px-5 py-[140px] bg-no-repeat bg-left-top bg-auto bg-[url('https://i.ibb.co/Z1DGZFL/Purple.png')]">
           <h2 className="text-[32px] md:text-[64px] font-extrabold text-center">
@@ -35,31 +40,15 @@ const EventItems = () => {
             Ut posuere felis arcu tellus tempus in in ultricies. Gravida id nibh
             ornare viverra. Ultrices faucibus neque velit risus ac id lorem.
           </p>
+
           <div className="grid grid-cols-1 md:grid-cols-12 gap-5">
-            <div className="p-6 md:col-span-6 bg-[#C4E0E4] rounded-md">
-              <img className="w-full" src={item1.imgURL} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">{item1.name}</h3>
-            </div>
-            <div className="p-6 md:col-span-6 bg-[#FEE2F3] rounded-md">
-              <img className="w-full" src={item2.imgURL} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">{item2.name}</h3>
-            </div>
-            <div className="md:col-span-4 p-6 bg-[#FEEFE2] rounded-md">
-              <img className="w-full" src={item3.imgURL} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">{item3.name}</h3>
-            </div>
-            <div className="md:col-span-4 p-6 bg-[#E2F8FC] rounded-md">
-              <img className="w-full" src={item4.imgURL} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">{item4.name}</h3>
-            </div>
-            <div className="md:col-span-4 p-6 bg-[#E4CCC6] rounded-md">
-              <img className="w-full" src={item5.imgURL} alt="" />
-              <h3 className="text-[24px] font-medium mt-3">{item5.name}</h3>
-            </div>
+            <Item1 item1={item1} />
+            <Item2 item2={item2} />
+            <Item3 item3={item3} />
+            <Item4 item4={item4} />
+            <Item5 item5={item5} />
           </div>
-          {/* <div className="flex flex-col md:flex-row justify-center gap-5 mt-5">
-            
-          </div> */}
+
           <div className="flex flex-col md:flex-row justify-center gap-5 mt-5">
             {data &&
               data?.data?.slice(5).map((i) => (

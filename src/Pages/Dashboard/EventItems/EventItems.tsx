@@ -47,14 +47,14 @@ const EventItems = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
+    // Handling form submission
     const addEventItems = {
       name,
       imgUrl,
     };
     await postMutateAsync(addEventItems);
     alert("Item added successfully");
-    // Close the modal
+    // Closing the modal
     handleCloseModal();
   };
 
@@ -74,7 +74,7 @@ const EventItems = () => {
   // Event item UPDATE operation
   const handleSubmit2 = async (e) => {
     e.preventDefault();
-    // Handle form submission
+    // Handling form submission
     const updateEventItems = {
       name,
       imgUrl,
@@ -96,7 +96,7 @@ const EventItems = () => {
           location.reload(true);
         }
       });
-    // Close the modal
+    // Closing the modal
     handleCloseModal2();
   };
 
@@ -174,7 +174,6 @@ const EventItems = () => {
                     </div>
                   </td>
                 </tr>
-                {/* Add more rows here */}
               </tbody>
             ))}
         </table>

@@ -10,7 +10,7 @@ const Review = () => {
         <h2 className="text-[32px] md:text-[64px] font-extrabold text-white mb-20 max-w-[1280px] mx-auto px-5">
           What everyone says
         </h2>
-        {/* Marquee */}
+
         <Marquee pauseOnHover>
           <div className="p-8 rounded-md w-[412px] bg-[#633BAB] mx-3">
             <p className="text-[14px] md:text-[18px] text-white mb-8">

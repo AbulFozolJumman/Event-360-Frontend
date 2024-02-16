@@ -51,8 +51,11 @@ const Services = () => {
                   ultricies.Ut posuere felis arcu tellus tempus in in ultricies.
                 </p>
 
-                {s.services.split(",").map((d) => (
-                  <div className="flex items-center gap-[18px] mb-4">
+                {s.services.split(",").map((d, index) => (
+                  <div
+                    key={index}
+                    className="flex items-center gap-[18px] mb-4"
+                  >
                     <img src={checked} alt="checked" />
                     <p className="text-[18px]">{d}</p>
                   </div>

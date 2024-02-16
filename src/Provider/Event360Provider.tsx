@@ -5,7 +5,7 @@ import { ReactNode, createContext } from "react";
 export const Event360Context = createContext({});
 
 interface Event360ProviderProps {
-  children: ReactNode; // Specify the type for the children prop
+  children: ReactNode;
 }
 
 const Event360Provider: React.FC<Event360ProviderProps> = ({ children }) => {
