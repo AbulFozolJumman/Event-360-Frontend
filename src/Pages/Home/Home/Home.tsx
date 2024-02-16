@@ -4,6 +4,8 @@ import Plan from "../Plan/Plan";
 import RecentEvents from "../RecentEvents/RecentEvents";
 import Review from "../Review/Review";
 import Services from "../Services/Services";
+import Specialty from "../Specialty/Specialty";
+import Subscribes from "../Subscribes/Subscribes";
 
 const Home = () => {
   return (
@@ -14,6 +16,8 @@ const Home = () => {
       <Plan />
       <Review />
       <RecentEvents />
+      <Specialty />
+      <Subscribes />
     </>
   );
 };
