@@ -40,14 +40,14 @@ const Events = () => {
   });
 
   const [name, setName] = useState("");
-  const [imgUrl, setImgUrl] = useState("");
+  const [imgURL, setImgURL] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Handling form submission
     const addEvents = {
       name,
-      imgUrl,
+      imgURL,
     };
     await postMutateAsync(addEvents);
     alert("Event added successfully");
@@ -94,7 +94,7 @@ const Events = () => {
     // Handling form submission
     const addEvents = {
       name,
-      imgUrl,
+      imgURL,
     };
     await putMutateAsync(addEvents);
     alert("Event updated successfully");
@@ -207,14 +207,14 @@ const Events = () => {
                   />
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="imgUrl" className="block font-medium">
+                  <label htmlFor="imgURL" className="block font-medium">
                     Image URL:
                   </label>
                   <input
                     type="text"
-                    id="imgUrl"
-                    value={imgUrl}
-                    onChange={(e) => setImgUrl(e.target.value)}
+                    id="imgURL"
+                    value={imgURL}
+                    onChange={(e) => setImgURL(e.target.value)}
                     className="w-full border rounded-md p-2"
                   />
                 </div>
@@ -257,14 +257,14 @@ const Events = () => {
                   />
                 </div>
                 <div className="mb-4">
-                  <label htmlFor="imgUrl" className="block font-medium">
+                  <label htmlFor="imgURL" className="block font-medium">
                     Image URL:
                   </label>
                   <input
                     type="text"
-                    id="imgUrl"
-                    value={imgUrl}
-                    onChange={(e) => setImgUrl(e.target.value)}
+                    id="imgURL"
+                    value={imgURL}
+                    onChange={(e) => setImgURL(e.target.value)}
                     className="w-full border rounded-md p-2"
                   />
                 </div>
