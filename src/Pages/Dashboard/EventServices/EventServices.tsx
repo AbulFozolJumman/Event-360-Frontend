@@ -12,8 +12,6 @@ const EventServices = () => {
 
   // Add event service Modal function
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [name, setName] = useState("");
-  const [services, setServices] = useState("");
 
   const handleOpenModal = () => {
     setIsModalOpen(true);
@@ -24,7 +22,7 @@ const EventServices = () => {
   };
 
   // Event service POST operation
-  const queryClient = useQueryClient();
+  const postQueryClient = useQueryClient();
 
   const { mutateAsync: postMutateAsync } = useMutation({
     mutationFn: async (data) => {
@@ -40,19 +38,22 @@ const EventServices = () => {
       );
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["Event services"]);
+      postQueryClient.invalidateQueries(["Event services"]);
     },
   });
+
+  const [name, setName] = useState("");
+  const [services, setServices] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Handling form submission
-    const addEventService = {
+    const addEvents = {
       name,
       services,
     };
-    await postMutateAsync(addEventService);
-    alert("Event service added successfully");
+    await postMutateAsync(addEvents);
+    alert("Event added successfully");
     // Closing the modal
     handleCloseModal();
   };
@@ -70,36 +71,43 @@ const EventServices = () => {
     setIsModalOpen2(false);
   };
 
-  // Event service UPDATE operation
+  // Event service PUT operation
+  const putQueryClient = useQueryClient();
+
+  const { mutateAsync: putMutateAsync } = useMutation({
+    mutationFn: async (data) => {
+      return await fetch(
+        `https://music-event-360-backend.vercel.app/event-services/${Uid}`,
+        {
+          method: "PUT",
+          body: JSON.stringify(data),
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      );
+    },
+    onSuccess: () => {
+      putQueryClient.invalidateQueries(["Event services"]);
+    },
+  });
+
   const handleSubmit2 = async (e) => {
     e.preventDefault();
     // Handling form submission
-    const updateEventService = {
+    const addEvents = {
       name,
       services,
     };
-    // fetching
-    fetch(`https://music-event-360-backend.vercel.app/event-services/${Uid}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updateEventService),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.modifiedCount > 0) {
-          console.log(updateEventService);
-          alert("Event service Updated successfully");
-          location.reload(true);
-        }
-      });
+    await putMutateAsync(addEvents);
+    alert("Event updated successfully");
     // Closing the modal
     handleCloseModal2();
   };
 
   // Event service DELETE operation
+  const deleteQueryClient = useQueryClient();
+
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
@@ -109,12 +117,118 @@ const EventServices = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert("Deleted successfully");
-            location.reload(true);
+            alert("Event deleted successfully");
+            deleteQueryClient.invalidateQueries("event services");
           }
         });
     }
   };
+
+  // // Add event service Modal function
+  // const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [name, setName] = useState("");
+  // const [services, setServices] = useState("");
+
+  // const handleOpenModal = () => {
+  //   setIsModalOpen(true);
+  // };
+
+  // const handleCloseModal = () => {
+  //   setIsModalOpen(false);
+  // };
+
+  // // Event service POST operation
+  // const queryClient = useQueryClient();
+
+  // const { mutateAsync: postMutateAsync } = useMutation({
+  //   mutationFn: async (data) => {
+  //     return await fetch(
+  //       "https://music-event-360-backend.vercel.app/event-services",
+  //       {
+  //         method: "POST",
+  //         body: JSON.stringify(data),
+  //         headers: {
+  //           "content-type": "application/json",
+  //         },
+  //       }
+  //     );
+  //   },
+  //   onSuccess: () => {
+  //     queryClient.invalidateQueries(["Event services"]);
+  //   },
+  // });
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   // Handling form submission
+  //   const addEventService = {
+  //     name,
+  //     services,
+  //   };
+  //   await postMutateAsync(addEventService);
+  //   alert("Event service added successfully");
+  //   // Closing the modal
+  //   handleCloseModal();
+  // };
+
+  // // Update event service Modal function
+  // const [isModalOpen2, setIsModalOpen2] = useState(false);
+  // const [Uid, setUid] = useState("");
+
+  // const handleOpenModal2 = (id) => {
+  //   setUid(id);
+  //   setIsModalOpen2(true);
+  // };
+
+  // const handleCloseModal2 = () => {
+  //   setIsModalOpen2(false);
+  // };
+
+  // // Event service UPDATE operation
+  // const handleSubmit2 = async (e) => {
+  //   e.preventDefault();
+  //   // Handling form submission
+  //   const updateEventService = {
+  //     name,
+  //     services,
+  //   };
+  //   // fetching
+  //   fetch(`https://music-event-360-backend.vercel.app/event-services/${Uid}`, {
+  //     method: "PUT",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(updateEventService),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       console.log(data);
+  //       if (data.modifiedCount > 0) {
+  //         console.log(updateEventService);
+  //         alert("Event service Updated successfully");
+  //         location.reload(true);
+  //       }
+  //     });
+  //   // Closing the modal
+  //   handleCloseModal2();
+  // };
+
+  // // Event service DELETE operation
+  // const handleDelete = (id) => {
+  //   const proceed = window.confirm("Are you sure you want to delete?");
+  //   if (proceed) {
+  //     fetch(`https://music-event-360-backend.vercel.app/event-services/${id}`, {
+  //       method: "DELETE",
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data.deletedCount > 0) {
+  //           alert("Deleted successfully");
+  //           location.reload(true);
+  //         }
+  //       });
+  //   }
+  // };
 
   if (isLoading) {
     return <Loader />;

@@ -22,7 +22,7 @@ const EventItems = () => {
   };
 
   // Event item POST operation
-  const queryClient = useQueryClient();
+  const postQueryClient = useQueryClient();
 
   const { mutateAsync: postMutateAsync } = useMutation({
     mutationFn: async (data) => {
@@ -38,7 +38,7 @@ const EventItems = () => {
       );
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["Event items"]);
+      postQueryClient.invalidateQueries(["Event items"]);
     },
   });
 
@@ -48,12 +48,12 @@ const EventItems = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Handling form submission
-    const addEventItems = {
+    const addEvents = {
       name,
       imgUrl,
     };
-    await postMutateAsync(addEventItems);
-    alert("Item added successfully");
+    await postMutateAsync(addEvents);
+    alert("Event added successfully");
     // Closing the modal
     handleCloseModal();
   };
@@ -71,36 +71,43 @@ const EventItems = () => {
     setIsModalOpen2(false);
   };
 
-  // Event item UPDATE operation
+  // Event item PUT operation
+  const putQueryClient = useQueryClient();
+
+  const { mutateAsync: putMutateAsync } = useMutation({
+    mutationFn: async (data) => {
+      return await fetch(
+        `https://music-event-360-backend.vercel.app/event-items/${Uid}`,
+        {
+          method: "PUT",
+          body: JSON.stringify(data),
+          headers: {
+            "content-type": "application/json",
+          },
+        }
+      );
+    },
+    onSuccess: () => {
+      putQueryClient.invalidateQueries(["Event items"]);
+    },
+  });
+
   const handleSubmit2 = async (e) => {
     e.preventDefault();
     // Handling form submission
-    const updateEventItems = {
+    const addEvents = {
       name,
       imgUrl,
     };
-    // fetching
-    fetch(`https://music-event-360-backend.vercel.app/event-items/${Uid}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updateEventItems),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.modifiedCount > 0) {
-          console.log(updateEventItems);
-          alert("Event item Updated successfully");
-          location.reload(true);
-        }
-      });
+    await putMutateAsync(addEvents);
+    alert("Event updated successfully");
     // Closing the modal
     handleCloseModal2();
   };
 
   // Event item DELETE operation
+  const deleteQueryClient = useQueryClient();
+
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure you want to delete?");
     if (proceed) {
@@ -110,8 +117,8 @@ const EventItems = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.deletedCount > 0) {
-            alert("Deleted successfully");
-            location.reload(true);
+            alert("Event deleted successfully");
+            deleteQueryClient.invalidateQueries("event items");
           }
         });
     }

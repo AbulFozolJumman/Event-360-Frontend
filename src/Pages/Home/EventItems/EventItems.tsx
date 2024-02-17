@@ -1,6 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import collageImg from "../../../assets/Collage.png";
 import checkedGray from "../../../assets/check-gray.png";
 import { useContext } from "react";
 import { Event360Context } from "../../../Provider/Event360Provider";
@@ -10,6 +9,16 @@ import Item2 from "../../../Components/Items/Item2";
 import Item3 from "../../../Components/Items/Item3";
 import Item4 from "../../../Components/Items/Item4";
 import Item5 from "../../../Components/Items/Item5";
+import img from "../../../assets/Picture.png";
+import img1 from "../../../assets/Picture (1).png";
+import img2 from "../../../assets/Picture (2).png";
+import img3 from "../../../assets/Picture (3).png";
+import img4 from "../../../assets/Picture (4).png";
+import img5 from "../../../assets/Picture (5).png";
+import img6 from "../../../assets/Picture (6).png";
+import img7 from "../../../assets/Picture (7).png";
+import img8 from "../../../assets/Picture (8).png";
+import img9 from "../../../assets/Picture (9).png";
 
 const EventItems = () => {
   const { eventItemsData } = useContext(Event360Context);
@@ -62,7 +71,7 @@ const EventItems = () => {
 
         {/* Gallery */}
         <div className="max-w-[1280px] mx-auto px-5 pb-[160px] bg-no-repeat bg-right-bottom bg-auto bg-[url('https://i.ibb.co/qMPXLNw/Explosion.png')]">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-5">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-10">
             <div className=" bg-no-repeat bg-right-top bg-auto bg-[url('https://i.ibb.co/02Wf8Bb/Party.png')]">
               <h2 className="text-[32px] md:text-[64px] font-extrabold my-8">
                 Gallery
@@ -91,8 +100,26 @@ const EventItems = () => {
                 <p className="text-[18px]">Front Seat</p>
               </div>
             </div>
-            <div>
-              <img src={collageImg} alt="" />
+
+            <div className="flex items-center justify-center gap-2">
+              <div className="flex items-end justify-center gap-2 flex-col">
+                <img src={img} alt="" />
+                <img src={img1} alt="" />
+              </div>
+              <div className="flex items-center justify-center gap-2 flex-col">
+                <img src={img2} alt="" />
+                <img src={img3} alt="" />
+                <img src={img4} alt="" />
+              </div>
+              <div className="flex items-center justify-center gap-2 flex-col">
+                <img src={img5} alt="" />
+                <img src={img6} alt="" />
+                <img src={img7} alt="" />
+              </div>
+              <div className="flex items-start justify-center gap-2 flex-col">
+                <img src={img8} alt="" />
+                <img src={img9} alt="" />
+              </div>
             </div>
           </div>
         </div>
