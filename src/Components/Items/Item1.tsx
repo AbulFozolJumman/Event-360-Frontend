@@ -11,8 +11,8 @@ const Item1 = ({ item1 }) => {
       ref={divRef}
       className="p-6 md:col-span-6 bg-[#C4E0E4]  rounded-md"
     >
-      <img className="w-full" src={item1.imgURL} alt="" />
-      <h3 className="text-[24px] font-medium mt-3">{item1.name}</h3>
+      <img className="w-full" src={item1?.imgURL} alt="" />
+      <h3 className="text-[24px] font-medium mt-3">{item1?.name}</h3>
     </motion.div>
   );
 };
